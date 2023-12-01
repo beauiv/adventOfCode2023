@@ -34,6 +34,7 @@ func main() {
 			convString = strings.Replace(convString, number,strconv.Itoa(i),-1)
 		}
 		cleanStr := clearString(convString)
+		fmt.Println(cleanStr)
 		for i := 0; i < len(cleanStr); i++ {
 			if i == 0 || i == len(cleanStr)-1 {
 				numStr = numStr + string(cleanStr[i])
