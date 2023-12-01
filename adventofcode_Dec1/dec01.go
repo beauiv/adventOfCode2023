@@ -9,6 +9,7 @@ import (
 	"os"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 var nonAlphanumericRegex = regexp.MustCompile(`[^0-9]+`)
@@ -29,7 +30,7 @@ func main() {
 	for scanner.Scan() {
 		numStr := ""
 		convString:=scanner.Text();
-		for i, number in range textNumbers {
+		for i, number := range textNumbers {
 			convStr = strings.Replace(convString, number,i,-1)
 		}
 		cleanStr := clearString(convStr)
