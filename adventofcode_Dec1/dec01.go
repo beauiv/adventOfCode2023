@@ -1,6 +1,7 @@
 package main
 
 //get all numbers from line, only take first and last number, make int, add.
+//part 2, get text representation of numbers and consider them as well.
 import (
 	"bufio"
 	"fmt"
