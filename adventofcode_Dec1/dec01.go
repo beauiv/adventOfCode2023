@@ -31,9 +31,9 @@ func main() {
 		numStr := ""
 		convString:=scanner.Text();
 		for i, number := range textNumbers {
-			convString = strings.Replace(convString, number,str(i),-1)
+			convString = strings.Replace(convString, number,strconv.Itoa(i),-1)
 		}
-		cleanStr := clearString(convStr)
+		cleanStr := clearString(convString)
 		for i := 0; i < len(cleanStr); i++ {
 			if i == 0 || i == len(cleanStr)-1 {
 				numStr = numStr + string(cleanStr[i])
