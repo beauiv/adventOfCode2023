@@ -41,6 +41,7 @@ func main() {
 		fmt.Println("Sum so far:", sum)
 	}
 	fmt.Println("total: ", sum)
+	//test change
 
 	// str := clearString("znggdvvkjthreethree79eight4")
 	// numStr := ""
