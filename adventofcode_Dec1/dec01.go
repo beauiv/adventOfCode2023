@@ -12,7 +12,7 @@ import (
 )
 
 var nonAlphanumericRegex = regexp.MustCompile(`[^0-9]+`)
-var textNumbers = ["zero","one","two","three","four","five","six","seven","eight","nine"]
+var textNumbers := ["zero","one","two","three","four","five","six","seven","eight","nine"]
 
 func clearString(str string) string {
 	return nonAlphanumericRegex.ReplaceAllString(str, "")
