@@ -13,7 +13,7 @@ import (
 )
 
 var nonAlphanumericRegex = regexp.MustCompile(`[^0-9]+`)
-var textNumbers = [10]string{"zero","one","two","three","four","five","six","seven","eight","nine"}
+var textNumbers = [10]string{"z0o","o1e","t2o","t3e","f4r","f5e","s6x","s7n","e8t","n9e"}
 
 func clearString(str string) string {
 	return nonAlphanumericRegex.ReplaceAllString(str, "")
@@ -41,7 +41,7 @@ func main() {
 		fmt.Println("Clean String: ", cleanStr)
 		for i := 0; i < len(cleanStr); i++ {
 			if i == 0 || i == len(cleanStr)-1 {
-				numStr = numStr + cleanStr[i]
+				numStr = numStr + string(cleanStr[i])
 			}
 		}
 		if len(numStr) == 1 {
