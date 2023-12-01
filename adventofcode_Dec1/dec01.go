@@ -33,7 +33,7 @@ func main() {
 		convString:=scanner.Text();
 		fmt.Println("Old String: ", convString)
 		for i, number := range textNumbers {	
-			fmt.Println("Replacing "+ number + "with ", i)
+			//fmt.Println("Replacing "+ number + "with ", i)
 			convString = strings.Replace(convString, number,strconv.Itoa(i),-1)
 		}
 		fmt.Println("New String: ", convString)
@@ -41,11 +41,12 @@ func main() {
 		fmt.Println("Clean String: ", cleanStr)
 		for i := 0; i < len(cleanStr); i++ {
 			if i == 0 || i == len(cleanStr)-1 {
-				numStr = numStr + string(cleanStr[i])
+				numStr = numStr + cleanStr[i]
 			}
 		}
 		if len(numStr) == 1 {
 			numStr = numStr + numStr
+			fmt.Println("only one digit, duping: " + numStr)
 		}
 		hold, _ := strconv.Atoi(numStr)
 		sum += hold
