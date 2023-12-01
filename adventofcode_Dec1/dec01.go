@@ -31,7 +31,7 @@ func main() {
 		numStr := ""
 		convString:=scanner.Text();
 		for i, number := range textNumbers {
-			convStr = strings.Replace(convString, number,i,-1)
+			convString = strings.Replace(convString, number,str(i),-1)
 		}
 		cleanStr := clearString(convStr)
 		for i := 0; i < len(cleanStr); i++ {
