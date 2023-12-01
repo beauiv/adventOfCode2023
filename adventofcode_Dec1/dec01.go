@@ -13,7 +13,8 @@ import (
 )
 
 var nonAlphanumericRegex = regexp.MustCompile(`[^0-9]+`)
-var textNumbers = [10]string{"z0o","o1e","t2o","t3e","f4r","f5e","s6x","s7n","e8t","n9e"}
+var textNumbers = [10]string{"zero","one","two","threee","fourr","five","six","seven","eight","nine"}
+var textNumbersRep = [10]string{"z0o","o1e","t2o","t3e","f4r","f5e","s6x","s7n","e8t","n9e"}
 
 func clearString(str string) string {
 	return nonAlphanumericRegex.ReplaceAllString(str, "")
@@ -34,7 +35,7 @@ func main() {
 		fmt.Println("Old String: ", convString)
 		for i, number := range textNumbers {	
 			//fmt.Println("Replacing "+ number + "with ", i)
-			convString = strings.Replace(convString, number,strconv.Itoa(i),-1)
+			convString = strings.Replace(convString, number,textNumbersRep[i],-1)
 		}
 		fmt.Println("New String: ", convString)
 		cleanStr := clearString(convString)
