@@ -25,6 +25,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer file.Close()
+	count := 0
 	sum := 0
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
@@ -49,8 +50,10 @@ func main() {
 		sum += hold
 		fmt.Println("Number this time: ", hold)
 		fmt.Println("Sum so far:", sum)
+		count++
 	}
 	fmt.Println("total: ", sum)
+	fmt.Println("lines processed: ", count)
 
 	//test change
 
