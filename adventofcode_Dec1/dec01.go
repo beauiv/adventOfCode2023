@@ -11,6 +11,7 @@ import (
 )
 
 var nonAlphanumericRegex = regexp.MustCompile(`[^0-9]+`)
+var textNumbers = ["zero","one","two","three","four","five","six","seven","eight","nine"]
 
 func clearString(str string) string {
 	return nonAlphanumericRegex.ReplaceAllString(str, "")
@@ -26,7 +27,11 @@ func main() {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		numStr := ""
-		cleanStr := clearString(scanner.Text())
+		convString:=scanner.Text();
+		for i, number in range textNumbers {
+			convStr = strings.Replace(convString, number,i,-1)
+		}
+		cleanStr := clearString(convStr)
 		for i := 0; i < len(cleanStr); i++ {
 			if i == 0 || i == len(cleanStr)-1 {
 				numStr = numStr + string(cleanStr[i])
@@ -41,6 +46,7 @@ func main() {
 		fmt.Println("Sum so far:", sum)
 	}
 	fmt.Println("total: ", sum)
+
 	//test change
 
 	// str := clearString("znggdvvkjthreethree79eight4")
