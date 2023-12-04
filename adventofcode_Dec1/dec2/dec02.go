@@ -53,6 +53,7 @@ func main() {
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
 				holdId, err = strconv.Atoi(clearString(part))
+				fmt.Println("Game:",holdId)
 			}else {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
