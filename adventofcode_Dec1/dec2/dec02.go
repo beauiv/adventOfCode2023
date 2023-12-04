@@ -35,7 +35,6 @@ func main() {
 	maxRed := 12
 	maxBlue := 14
 	
-
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
 	holdId := 0
