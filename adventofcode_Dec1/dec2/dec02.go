@@ -62,21 +62,21 @@ func main() {
 					colors := strings.Split(drawPart, ",")
 					for _, colorPart := range colors {
 						fmt.Println("color split,", colorPart)
-						if(strings.Contains(drawPart,"green")){
+						if(strings.Contains(colorPart,"green")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
 								validGame = false
 							}
 						}
-						if(strings.Contains(drawPart,"red")){
+						if(strings.Contains(colorPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
 							}
 						}
-						if(strings.Contains(drawPart,"blue")){
+						if(strings.Contains(colorPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
