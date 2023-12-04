@@ -30,6 +30,7 @@ func main() {
 	file, _ := os.Open("input02.txt")
 	defer file.Close()
 	idSum := 0
+	powerSum := 0
 	maxGreen := 13
 	maxRed := 12
 	maxBlue := 14
@@ -56,6 +57,9 @@ func main() {
 				holdId, err = strconv.Atoi(clearString(part))
 				fmt.Println("Game:",holdId)
 			}else {
+				fewRed := 0
+				fewGreen := 0
+				fewBlue := 0
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
 				for _, drawPart := range draws {
@@ -70,6 +74,10 @@ func main() {
 							if(colorCount > maxGreen){
 								fmt.Println("Game is not Valid")
 								validGame = false
+							} else {
+								if(colorCount > fewGreen) {
+									fewGreen = colorCount
+								}
 							}
 						}
 						if(strings.Contains(colorPart,"red")){
@@ -78,6 +86,10 @@ func main() {
 							if(colorCount > maxRed){
 								fmt.Println("Game is not Valid")
 								validGame = false
+							} else {
+								if(colorCount > fewRed) {
+									fewRed = colorCount
+								}
 							}
 						} 
 						if (strings.Contains(colorPart,"blue")){
@@ -86,9 +98,14 @@ func main() {
 							if(colorCount > maxBlue){
 								fmt.Println("Game is not Valid")
 								validGame = false
+							} else {
+								if(colorCount > fewBlue) {
+									fewBlue = colorCount
+								}
 							}
 						}
 					}
+					powerSum += (fewBlue * fewRed * fewGreen)
 				}
 				if(validGame){
 					fmt.Println("Game was valid, add it")
@@ -98,6 +115,7 @@ func main() {
 		}
 	}
 	fmt.Println("Valid Game Sum: ", idSum);
+	fmt.Println("Power Sum: ", powerSum);
 	
 
 }
