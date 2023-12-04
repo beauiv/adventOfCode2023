@@ -105,8 +105,8 @@ func main() {
 							}
 						}
 					}
-					powerSum += (fewBlue * fewRed * fewGreen)
 				}
+				powerSum += (fewBlue * fewRed * fewGreen)
 				if(validGame){
 					fmt.Println("Game was valid, add it")
 					idSum += holdId
