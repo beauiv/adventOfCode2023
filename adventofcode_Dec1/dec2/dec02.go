@@ -69,16 +69,14 @@ func main() {
 								validGame = false
 								break
 							}
-						}
-						if(strings.Contains(colorPart,"red")){
+						} else if(strings.Contains(colorPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
 								break
 							}
-						}
-						if(strings.Contains(colorPart,"blue")){
+						} else (strings.Contains(colorPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
@@ -89,9 +87,9 @@ func main() {
 					}
 				}
 			}
-			if(validGame){
-				idSum += holdId
-			}
+		}
+		if(validGame){
+			idSum += holdId
 		}
 	}
 	fmt.Println("Valid Game Sum: ", idSum);
