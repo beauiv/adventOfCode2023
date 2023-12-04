@@ -29,6 +29,7 @@ func clearString(str string) string {
 
 func main() {
 	file, _ := os.Open("input02.txt")
+	defer file.Close()
 	idSum := 0
 	maxGreen := 13
 	maxRed := 12
