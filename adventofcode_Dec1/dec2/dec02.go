@@ -43,7 +43,7 @@ func main() {
 		//split to get game id
 		currline := scanner.Text()
 		gameStr := strings.Split(currline, ":")
-		for _, part in range gameStr {
+		for _, part := range gameStr {
 			// if part contains game, get id for sum, split second part
 			//set bool
 			validGame := true
@@ -53,17 +53,17 @@ func main() {
 			}else {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
-				for _, drawPart in range draws {
+				for _, drawPart := range draws {
 					//split into colors
 					colors := strings.Split(drawPart, ",")
-					for _, colorPart in range colors {
-						if(strings.Contains(drawPart,"green") && strings.Atoi(clearString(colorPart) > maxGreen)){
+					for _, colorPart := range colors {
+						if(strings.Contains(drawPart,"green") && strings.Atoi(clearString(colorPart)) > maxGreen){
 							validGame = false
 						}
-						if(strings.Contains(drawPart,"red") && strings.Atoi(clearString(colorPart) > maxRed)){
+						if(strings.Contains(drawPart,"red") && strings.Atoi(clearString(colorPart)) > maxRed){
 							validGame = false
 						}
-						if(strings.Contains(drawPart,"blue") && strings.Atoi(clearString(colorPart) > maxBlue)){
+						if(strings.Contains(drawPart,"blue") && strings.Atoi(clearString(colorPart)) > maxBlue){
 							validGame = false
 						}
 					}
