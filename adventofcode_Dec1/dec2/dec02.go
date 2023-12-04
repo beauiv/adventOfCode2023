@@ -36,15 +36,16 @@ func main() {
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
-	scanner = bufio.NewScanner(file)
-	for scanner.Scan (){
-		//split to get game id
-		currline = scanner.Text()
-		gameIdStr := strings.split(currline, ":")
-		fmt.Println(gameIdStr);
+	currline = "Game 1: 20 green, 3 red, 2 blue; 9 red, 16 blue, 18 green; 6 blue, 19 red, 10 green; 12 red, 19 green, 11 blue"
+	gameIdStr := strings.Split(currline, ":")
+	fmt.Println(gameIdStr);
+	// scanner = bufio.NewScanner(file)
+	// for scanner.Scan (){
+	// 	//split to get game id
 
 
-	}
+
+	// }
 	
 
 }
