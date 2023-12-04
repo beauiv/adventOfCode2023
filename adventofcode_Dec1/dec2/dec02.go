@@ -74,36 +74,33 @@ func main() {
 							if(colorCount > maxGreen){
 								fmt.Println("Game is not Valid")
 								validGame = false
-							} else {
-								if(colorCount > fewGreen) {
+							}
+							if(colorCount > fewGreen) {
 									fewGreen = colorCount
 								}
 							}
-						}
 						if(strings.Contains(colorPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								fmt.Println("Game is not Valid")
 								validGame = false
-							} else {
-								if(colorCount > fewRed) {
+							}
+							if(colorCount > fewRed) {
 									fewRed = colorCount
 								}
 							}
-						} 
 						if (strings.Contains(colorPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
 								fmt.Println("Game is not Valid")
 								validGame = false
-							} else {
-								if(colorCount > fewBlue) {
+							} 
+							if(colorCount > fewBlue) {
 									fewBlue = colorCount
 								}
 							}
-						}
 					}
 				}
 				powerSum += (fewBlue * fewRed * fewGreen)
