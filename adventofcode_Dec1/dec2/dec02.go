@@ -33,6 +33,7 @@ func main() {
 	maxGreen := 13
 	maxRed := 12
 	maxBlue := 13
+	validGame := true
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
@@ -49,7 +50,7 @@ func main() {
 			fmt.Println("First split,", part)
 			// if part contains game, get id for sum, split second part
 			//set bool
-			validGame := true
+			validGame = true
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
 				holdId, err = strconv.Atoi(clearString(part))
