@@ -9,10 +9,10 @@ package main
 //for each game if a single reveal revealed more than the set amount, dont include it
 
 import (
-	//"bufio"
+	"bufio"
 	"fmt"
 	//"log"
-	//"os"
+	"os"
 	"regexp"
 	//"strconv"
 	"strings"
