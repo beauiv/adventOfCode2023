@@ -32,7 +32,7 @@ func main() {
 	idSum := 0
 	maxGreen := 13
 	maxRed := 12
-	maxBlue := 13
+	maxBlue := 14
 	
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
