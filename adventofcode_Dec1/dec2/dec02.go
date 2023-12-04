@@ -11,10 +11,8 @@ package main
 import (
 	"bufio"
 	"fmt"
-	//"log"
 	"os"
 	"regexp"
-	//"strconv"
 	"strings"
 )
 
