@@ -49,7 +49,7 @@ func main() {
 			validGame := true
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
-				holdId:=strconv.Atoi(clearString(part))
+				holdId, _ := strconv.Atoi(clearString(part))
 			}else {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
@@ -57,17 +57,25 @@ func main() {
 					//split into colors
 					colors := strings.Split(drawPart, ",")
 					for _, colorPart := range colors {
-						if(strings.Contains(drawPart,"green") && strconv.Atoi(clearString(colorPart)) > maxGreen){
-							validGame = false
+						if(strings.Contains(drawPart,"green")){
+							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							if(colorCount > maxGreen){
+								validGame = false
+							}
 						}
-						if(strings.Contains(drawPart,"red") && strconv.Atoi(clearString(colorPart)) > maxRed){
-							validGame = false
+						if(strings.Contains(drawPart,"red")){
+							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							if(colorCount > maxRed){
+								validGame = false
+							}
 						}
-						if(strings.Contains(drawPart,"blue") && strconv.Atoi(clearString(colorPart)) > maxBlue){
-							validGame = false
+						if(strings.Contains(drawPart,"blue")){
+							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							if(colorCount > maxBlue){
+								validGame = false
+							}
 						}
 					}
-
 				}
 			}
 			if(validGame){
