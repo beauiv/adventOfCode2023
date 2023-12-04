@@ -88,10 +88,10 @@ func main() {
 						}
 					}
 				}
+				if(validGame){
+					idSum += holdId
+				}
 			}
-		}
-		if(validGame){
-			idSum += holdId
 		}
 	}
 	fmt.Println("Valid Game Sum: ", idSum);
