@@ -28,25 +28,51 @@ func clearString(str string) string {
 
 
 func main() {
-	//file, _ := os.Open("input02.txt")
-	// idSum := 0
-	// maxGreen := 13
-	// maxRed := 12
-	// maxBlue := 13
+	file, _ := os.Open("input02.txt")
+	idSum := 0
+	maxGreen := 13
+	maxRed := 12
+	maxBlue := 13
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
-	currline := "Game 111: 20 green, 3 red, 2 blue; 9 red, 16 blue, 18 green; 6 blue, 19 red, 10 green; 12 red, 19 green, 11 blue"
-	gameIdStr := strings.Split(currline, ":")
-	fmt.Println(clearString(gameIdStr[0]));
-
-	// scanner = bufio.NewScanner(file)
-	// for scanner.Scan (){
-	// 	//split to get game id
 
 
+	scanner = bufio.NewScanner(file)
+	for scanner.Scan (){
+		//split to get game id
+		currline := scanner.Text()
+		gameStr := strings.Split(currline, ":")
+		for _, part in range gameStr {
+			// if part contains game, get id for sum, split second part
+			//set bool
+			validGame := true
+			if(strings.Contains(part, "Game")) {
+				//hold id as int, just in case
+				holdId:=strings.Atoi(clearString(part))
+			}else {
+				//must be start of draw listings, split into draws
+				draws := strings.Splt(part, ";")
+				for _, drawPart in range draws {
+					if(strings.Contains(drawPart,"green") && strings.Atoi(clearString(drawPart > maxGreen))){
+						validGame = false
+					}
+					if(strings.Contains(drawPart,"red") && strings.Atoi(clearString(drawPart > maxRed))){
+						validGame = false
+					}
+					if(strings.Contains(drawPart,"blue") && strings.Atoi(clearString(drawPart > maxBlue))){
+						validGame = false
+					}
+				}
+			}
+			if(validGame){
+				idSum += holdId
+			}
+		}
+		fmt.Println("Valid Game Sum: ", idSum);
 
-	// }
+
+	}
 	
 
 }
