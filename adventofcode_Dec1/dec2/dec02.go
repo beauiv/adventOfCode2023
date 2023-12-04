@@ -38,7 +38,8 @@ func main() {
 
 	currline := "Game 1: 20 green, 3 red, 2 blue; 9 red, 16 blue, 18 green; 6 blue, 19 red, 10 green; 12 red, 19 green, 11 blue"
 	gameIdStr := strings.Split(currline, ":")
-	fmt.Println(gameIdStr[0]);
+	fmt.Println(clearString(gameIdStr[0]));
+	
 	// scanner = bufio.NewScanner(file)
 	// for scanner.Scan (){
 	// 	//split to get game id
