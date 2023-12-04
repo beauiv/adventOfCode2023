@@ -37,7 +37,7 @@ func main() {
 
 
 
-	scanner = bufio.NewScanner(file)
+	scanner := bufio.NewScanner(file)
 	for scanner.Scan (){
 		//split to get game id
 		currline := scanner.Text()
