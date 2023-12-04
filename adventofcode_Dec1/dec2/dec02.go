@@ -29,14 +29,14 @@ func clearString(str string) string {
 
 func main() {
 	file, _ := os.Open("input02.txt")
-	idSum := 0
-	maxGreen := 13
-	maxRed := 12
-	maxBlue := 13
+	// idSum := 0
+	// maxGreen := 13
+	// maxRed := 12
+	// maxBlue := 13
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
-	currline = "Game 1: 20 green, 3 red, 2 blue; 9 red, 16 blue, 18 green; 6 blue, 19 red, 10 green; 12 red, 19 green, 11 blue"
+	currline := "Game 1: 20 green, 3 red, 2 blue; 9 red, 16 blue, 18 green; 6 blue, 19 red, 10 green; 12 red, 19 green, 11 blue"
 	gameIdStr := strings.Split(currline, ":")
 	fmt.Println(gameIdStr);
 	// scanner = bufio.NewScanner(file)
