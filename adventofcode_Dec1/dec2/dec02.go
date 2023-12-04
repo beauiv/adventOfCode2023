@@ -43,14 +43,15 @@ func main() {
 		//split to get game id
 		currline := scanner.Text()
 		gameStr := strings.Split(currline, ":")
-		var int holdId
+		var int holdId = 0;
+		var string err = ""
 		for _, part := range gameStr {
 			// if part contains game, get id for sum, split second part
 			//set bool
 			validGame := true
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
-				holdId, _ := strconv.Atoi(clearString(part))
+				holdId, err = strconv.Atoi(clearString(part))
 			}else {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
