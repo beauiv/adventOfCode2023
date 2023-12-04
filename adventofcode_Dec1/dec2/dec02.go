@@ -49,13 +49,10 @@ func main() {
 		gameStr := strings.Split(currline, ":")
 
 		for _, part := range gameStr {
-			fmt.Println("First split,", part)
 			// if part contains game, get id for sum, split second part
-			//set bool
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
 				holdId, err = strconv.Atoi(clearString(part))
-				fmt.Println("Game:",holdId)
 			}else {
 				fewRed := 0
 				fewGreen := 0
@@ -63,16 +60,12 @@ func main() {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
 				for _, drawPart := range draws {
-					fmt.Println("Draw split,", drawPart)
 					//split into colors 
 					colors := strings.Split(drawPart, ",")
 					for _, colorPart := range colors {
-						fmt.Println("color split,", colorPart)
 						if(strings.Contains(colorPart,"green")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
-							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
-								fmt.Println("Game is not Valid")
 								validGame = false
 							}
 							if(colorCount > fewGreen) {
@@ -81,9 +74,7 @@ func main() {
 							}
 						if(strings.Contains(colorPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
-							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
-								fmt.Println("Game is not Valid")
 								validGame = false
 							}
 							if(colorCount > fewRed) {
@@ -92,9 +83,7 @@ func main() {
 							}
 						if (strings.Contains(colorPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
-							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
-								fmt.Println("Game is not Valid")
 								validGame = false
 							} 
 							if(colorCount > fewBlue) {
@@ -105,7 +94,6 @@ func main() {
 				}
 				powerSum += (fewBlue * fewRed * fewGreen)
 				if(validGame){
-					fmt.Println("Game was valid, add it")
 					idSum += holdId
 				}
 			}
