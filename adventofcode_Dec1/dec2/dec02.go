@@ -43,6 +43,7 @@ func main() {
 		//split to get game id
 		currline := scanner.Text()
 		gameStr := strings.Split(currline, ":")
+		var int holdId
 		for _, part := range gameStr {
 			// if part contains game, get id for sum, split second part
 			//set bool
