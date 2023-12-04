@@ -50,7 +50,6 @@ func main() {
 			fmt.Println("First split,", part)
 			// if part contains game, get id for sum, split second part
 			//set bool
-			validGame = true
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
 				holdId, err = strconv.Atoi(clearString(part))
@@ -68,6 +67,7 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
 								validGame = false
+								break
 							}
 						}
 						if(strings.Contains(colorPart,"red")){
@@ -75,6 +75,7 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
+								break
 							}
 						}
 						if(strings.Contains(colorPart,"blue")){
@@ -82,15 +83,15 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
 								validGame = false
+								break
 							}
 						}
 					}
 				}
 			}
-
-		}
-		if(validGame){
-			idSum += holdId
+			if(validGame){
+				idSum += holdId
+			}
 		}
 	}
 	fmt.Println("Valid Game Sum: ", idSum);
