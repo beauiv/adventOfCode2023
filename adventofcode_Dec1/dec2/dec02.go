@@ -38,7 +38,7 @@ func main() {
 
 	holdId := 0
 	err := *new(error)
-
+	fmt.Println(err)
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan (){
 		//split to get game id
