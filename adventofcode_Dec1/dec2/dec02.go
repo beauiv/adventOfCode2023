@@ -9,12 +9,12 @@ package main
 //for each game if a single reveal revealed more than the set amount, dont include it
 
 import (
-	"bufio"
+	//"bufio"
 	"fmt"
-	"log"
+	//"log"
 	"os"
 	"regexp"
-	"strconv"
+	//"strconv"
 	"strings"
 )
 
@@ -28,7 +28,7 @@ func clearString(str string) string {
 
 
 func main() {
-	file, _ := os.Open("input02.txt")
+	//file, _ := os.Open("input02.txt")
 	// idSum := 0
 	// maxGreen := 13
 	// maxRed := 12
