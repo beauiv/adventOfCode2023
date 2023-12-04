@@ -66,6 +66,7 @@ func main() {
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
+								fmt.Println("Game is not Valid")
 								validGame = false
 							}
 						}
@@ -73,6 +74,7 @@ func main() {
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
+								fmt.Println("Game is not Valid")
 								validGame = false
 							}
 						} 
@@ -80,6 +82,7 @@ func main() {
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
+								fmt.Println("Game is not Valid")
 								validGame = false
 							}
 						}
