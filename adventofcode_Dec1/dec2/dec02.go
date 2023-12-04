@@ -43,8 +43,8 @@ func main() {
 		//split to get game id
 		currline := scanner.Text()
 		gameStr := strings.Split(currline, ":")
-		var int holdId = 0;
-		var string err = ""
+		var  holdId int = 0;
+		var  err string = ""
 		for _, part := range gameStr {
 			// if part contains game, get id for sum, split second part
 			//set bool
@@ -56,7 +56,7 @@ func main() {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
 				for _, drawPart := range draws {
-					//split into colors
+					//split into colors 
 					colors := strings.Split(drawPart, ",")
 					for _, colorPart := range colors {
 						if(strings.Contains(drawPart,"green")){
