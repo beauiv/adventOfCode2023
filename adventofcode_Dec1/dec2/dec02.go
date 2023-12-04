@@ -64,18 +64,21 @@ func main() {
 						fmt.Println("color split,", colorPart)
 						if(strings.Contains(drawPart,"green")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
 								validGame = false
 							}
 						}
 						if(strings.Contains(drawPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
 							}
 						}
 						if(strings.Contains(drawPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
+							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
 								validGame = false
 							}
