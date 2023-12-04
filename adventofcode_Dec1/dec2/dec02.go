@@ -69,14 +69,16 @@ func main() {
 								validGame = false
 								break
 							}
-						} else if(strings.Contains(colorPart,"red")){
+						}
+						if(strings.Contains(colorPart,"red")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
 								break
 							}
-						} else (strings.Contains(colorPart,"blue")){
+						} 
+						if (strings.Contains(colorPart,"blue")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
