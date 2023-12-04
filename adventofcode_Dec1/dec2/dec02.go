@@ -67,7 +67,6 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxGreen){
 								validGame = false
-								break
 							}
 						}
 						if(strings.Contains(colorPart,"red")){
@@ -75,7 +74,6 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxRed){
 								validGame = false
-								break
 							}
 						} 
 						if (strings.Contains(colorPart,"blue")){
@@ -83,7 +81,6 @@ func main() {
 							fmt.Println("color count,", colorCount)
 							if(colorCount > maxBlue){
 								validGame = false
-								break
 							}
 						}
 					}
