@@ -33,7 +33,7 @@ func main() {
 	maxGreen := 13
 	maxRed := 12
 	maxBlue := 13
-	validGame := true
+	
 
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
@@ -42,6 +42,7 @@ func main() {
 	fmt.Println(err)
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan (){
+		validGame := true
 		//split to get game id
 		currline := scanner.Text()
 		gameStr := strings.Split(currline, ":")
@@ -90,6 +91,7 @@ func main() {
 					}
 				}
 				if(validGame){
+					fmt.Println("Game was valid, add it")
 					idSum += holdId
 				}
 			}
