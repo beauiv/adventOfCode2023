@@ -39,8 +39,6 @@ func main() {
 	//iterate through each line, iterate through each game, if no color pulled is higher than a max, add to idSum.
 
 	holdId := 0
-	err := *new(error)
-	fmt.Println(err)
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan (){
 		validGame := true
@@ -52,7 +50,7 @@ func main() {
 			// if part contains game, get id for sum, split second part
 			if(strings.Contains(part, "Game")) {
 				//hold id as int, just in case
-				holdId, err = strconv.Atoi(clearString(part))
+				holdId, _ = strconv.Atoi(clearString(part))
 			}else {
 				fewRed := 0
 				fewGreen := 0
