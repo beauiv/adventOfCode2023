@@ -46,6 +46,7 @@ func main() {
 		gameStr := strings.Split(currline, ":")
 
 		for _, part := range gameStr {
+			fmt.Println("First split,", part)
 			// if part contains game, get id for sum, split second part
 			//set bool
 			validGame := true
@@ -56,9 +57,11 @@ func main() {
 				//must be start of draw listings, split into draws
 				draws := strings.Split(part, ";")
 				for _, drawPart := range draws {
+					fmt.Println("Draw split,", drawPart)
 					//split into colors 
 					colors := strings.Split(drawPart, ",")
 					for _, colorPart := range colors {
+						fmt.Println("color split,", colorPart)
 						if(strings.Contains(drawPart,"green")){
 							colorCount, _ := strconv.Atoi(clearString(colorPart))
 							if(colorCount > maxGreen){
